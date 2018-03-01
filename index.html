@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+		<title></title>
+		<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			/*<span class="Mahjong">一条</span>
+			<span class="Mahjong">二条</span>
+			<span class="Mahjong">三条</span>
+			<span class="Mahjong">四条</span>
+			<span class="Mahjong">五条</span>
+			<span class="Mahjong">六条</span>
+			<span class="Mahjong">七条</span>
+			<span class="Mahjong">八条</span>
+			<span class="Mahjong">九条</span>
+			<span class="Mahjong">东风</span>
+			<span class="Mahjong">西风</span>
+			<span class="Mahjong">南风</span>
+			<span class="Mahjong">北风</span>*/
+			#desk{
+				width: 100%;
+				height: 100%;
+				min-width:532.5px;
+				min-height: 300px;
+				border: 1px solid antiquewhite;
+				margin: 0 auto;
+				position: relative;
+				text-align: center;
+				z-index: 1;
+			}
+			#left{
+				width: 20px;
+				height: 100%;
+				border: 1px dashed blueviolet;
+				position: absolute;
+				left: 0px;
+				z-index: 2;
+			}
+			#top{
+				width: 100%;
+				height: 20px;
+				border: 1px dashed blueviolet;
+				position: absolute;
+				top: 0px;
+				z-index: 2;
+			}
+			#right{
+				width: 20px;
+				height: 100%;
+				border: 1px dashed blueviolet;
+				position: absolute;
+				right: 0px;
+				z-index: 2;
+			}
+			#bottom{
+				width: 100%;
+				height: 40px;
+				border: 1px solid blueviolet;
+				position: absolute;
+				bottom: 0px;
+				z-index: 4;
+			}
+			.Mahjong{
+				border: 1px solid burlywood;
+				box-shadow: 1.5px 3px 3px 1.5px gray;
+				text-align: center;
+			}
+			#left .Mahjong{
+				
+			}
+			#top .Mahjong{
+				
+			}
+			#right .Mahjong{
+				
+			}
+			#bottom .Mahjong{
+				height: 40px;
+				display: inline-block;
+				background-color: ghostwhite;
+			}
+			#middle_data{
+				border: 1px solid red;
+				width: 60%;
+				margin: 0 auto;
+				position: absolute;
+				top: 80px;
+				left: 20%;
+			}
+			#left_data{
+				position: absolute;
+				top: 80px;
+				left: 0;
+				border: 1px solid red;
+				width: 20%;
+				font-size: 12px;
+				z-index: 3;
+			}
+			#top_data{
+				position: absolute;
+				margin: 0 auto;
+				border: 1px solid red;
+				width: 20%;
+				top: 0;
+				left: 40%;
+				font-size: 12px;
+				z-index: 3;
+			}
+			#right_data{
+				position: absolute;
+				top: 80px;
+				right: 0;
+				border: 1px solid red;
+				width: 20%;
+				font-size: 12px;
+				z-index: 3;
+			}
+			/*用户信息栏样式*/
+			.leftoverMahjong{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="desk">
+			<div id="left_data">
+				<div class="userName">用户名:
+					<span>user</span>
+				</div>
+				<div class="userIntegral">用户积分:
+					<span>66666</span>
+				</div>
+				<div class="winNumberMahjong">赢牌次数:
+					<span>1</span>
+				</div>
+				<div class="leftoverMahjong">剩余牌量:
+					<span>13</span>
+				</div>
+				<div class="continuousThreeMahjong">碰牌:
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+				</div>
+				<div class="continuousFourMahjong">杠牌:
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+				</div>
+			</div>
+			<div id="top_data">
+				<div class="userName">用户名:
+					<span>user</span>
+				</div>
+				<div class="userIntegral">用户积分:
+					<span>66666</span>
+				</div>
+				<div class="winNumberMahjong">赢牌次数:
+					<span>1</span>
+				</div>
+				<div class="leftoverMahjong">剩余牌量:
+					<span>13</span>
+				</div>
+				<div class="continuousThreeMahjong">碰牌:
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+				</div>
+				<div class="continuousFourMahjong">杠牌:
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+				</div>
+			</div>
+			<div id="right_data">
+				<div class="userName">用户名:
+					<span>user</span>
+				</div>
+				<div class="userIntegral">用户积分:
+					<span>66666</span>
+				</div>
+				<div class="winNumberMahjong">赢牌次数:
+					<span>1</span>
+				</div>
+				<div class="leftoverMahjong">剩余牌量:
+					<span>13</span>
+				</div>
+				<div class="continuousThreeMahjong">碰牌:
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+				</div>
+				<div class="continuousFourMahjong">杠牌:
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+					<span>1</span>
+				</div>
+			</div>
+			<div id="middle_data">
+				
+			</div>
+			<div id="left">
+				<!--<span class="leftoverMahjong">剩余数量:<span>1</span></span>-->
+			<!--<span class="Mahjong">0</span>
+			<span class="Mahjong">1</span>
+			<span class="Mahjong">2</span>
+			<span class="Mahjong">3</span>
+			<span class="Mahjong">4</span>
+			<span class="Mahjong">5</span>
+			<span class="Mahjong">6</span>
+			<span class="Mahjong">7</span>
+			<span class="Mahjong">8</span>
+			<span class="Mahjong">9</span>
+			<span class="Mahjong">10</span>
+			<span class="Mahjong">11</span>
+			<span class="Mahjong">12</span>-->
+		</div>
+		<div id="top">
+			<!--<span class="leftoverMahjong">剩余数量:<span>1</span></span>-->
+			<!--<span class="Mahjong">0</span>
+			<span class="Mahjong">1</span>
+			<span class="Mahjong">2</span>
+			<span class="Mahjong">3</span>
+			<span class="Mahjong">4</span>
+			<span class="Mahjong">5</span>
+			<span class="Mahjong">6</span>
+			<span class="Mahjong">7</span>
+			<span class="Mahjong">8</span>
+			<span class="Mahjong">9</span>
+			<span class="Mahjong">10</span>
+			<span class="Mahjong">11</span>
+			<span class="Mahjong">12</span>-->
+		</div>
+		<div id="right">
+			<!--<span class="leftoverMahjong">剩余数量:<span>1</span></span>-->
+			<!--<span class="Mahjong">0</span>
+			<span class="Mahjong">1</span>
+			<span class="Mahjong">2</span>
+			<span class="Mahjong">3</span>
+			<span class="Mahjong">4</span>
+			<span class="Mahjong">5</span>
+			<span class="Mahjong">6</span>
+			<span class="Mahjong">7</span>
+			<span class="Mahjong">8</span>
+			<span class="Mahjong">9</span>
+			<span class="Mahjong">10</span>
+			<span class="Mahjong">11</span>
+			<span class="Mahjong">12</span>-->
+		</div>
+		<div id="bottom">
+			<span class="Mahjong">0</span>
+			<span class="Mahjong">1</span>
+			<span class="Mahjong">2</span>
+			<span class="Mahjong">3</span>
+			<span class="Mahjong">4</span>
+			<span class="Mahjong">5</span>
+			<span class="Mahjong">6</span>
+			<span class="Mahjong">7</span>
+			<span class="Mahjong">8</span>
+			<span class="Mahjong">9</span>
+			<span class="Mahjong">10</span>
+			<span class="Mahjong">11</span>
+			<span class="Mahjong">12</span>
+		</div>
+		</div>
+		<script type="text/javascript">
+			//计算牌的高度
+			var MahjongWidth = $("#bottom").width()/16;
+			console.log(MahjongWidth);
+			$("#bottom .Mahjong").width(MahjongWidth);
+		</script>
+	</body>
+</html>
